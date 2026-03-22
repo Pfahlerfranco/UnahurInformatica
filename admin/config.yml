@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Opcional: permite editar en local sin publicar
+# local_backend: true
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Configuración en español
+locale: 'es'
+
+collections:
+  - name: "posts"
+    label: "Materias"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
+      - {label: "Categorías", name: "categories", widget: "string", default: "Materias"}
+      - {label: "Autor", name: "by", widget: "string", default: "Informatica UNAHUR"}
+      - {label: "Ícono", name: "icon", widget: "string", default: "cpu"}
+      - label: "Preguntas"
+        name: "questions"
+        widget: "list"
+        fields:
+          - {label: "Pregunta", name: "question", widget: "string"}
+          - {label: "Respuesta", name: "answer", widget: "string"}
+          - {label: "Contenido", name: "contenido", widget: "text"}
+          - {label: "Programa (archivo PDF)", name: "programa", widget: "string", required: false}
