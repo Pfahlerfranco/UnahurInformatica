@@ -1,0 +1,33 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "Planes y materias"
+email: informatica@unahur.edu.ar
+description: "Ayuda para la inscripción a materias"
+baseurl: ""
+url: ""
+#twitter_username: "gustavoquinalha"
+#github_username:  "gustavoquinalha"
+color_theme: "#4db6ad" #"#0081ff"
+color_text:  "#fff"
+language:  "es"
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+gems: [jekyll-paginate]
+paginate: 5
+
+# Optimización CSS
+sass:
+  style: compressed
+remote_theme: gustavoquinalha/jekyll-help-center-theme
+
+# Plugins
+plugins_dir:
+  - jekyll-admin
