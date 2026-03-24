@@ -9,7 +9,7 @@ media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 # Configuración en español
-locale: 'es'
+locale: "es"
 
 collections:
   - name: "posts"
@@ -18,17 +18,59 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
-      - {label: "Categorías", name: "categories", widget: "string", default: "Materias"}
-      - {label: "Autor", name: "by", widget: "string", default: "Informatica UNAHUR"}
-      - {label: "Ícono", name: "icon", widget: "string", default: "cpu"}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Título", name: "title", widget: "string" }
+      - {
+          label: "Fecha",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD HH:mm:ss",
+        }
+      - {
+          label: "Categorías",
+          name: "categories",
+          widget: "string",
+          default: "Materias",
+        }
+      - {
+          label: "Autor",
+          name: "by",
+          widget: "string",
+          default: "Informatica UNAHUR",
+        }
+      - { label: "Ícono", name: "icon", widget: "string", default: "cpu" }
       - label: "Preguntas"
         name: "questions"
         widget: "list"
         fields:
-          - {label: "Pregunta", name: "question", widget: "string"}
-          - {label: "Respuesta", name: "answer", widget: "string"}
-          - {label: "Contenido", name: "contenido", widget: "text"}
-          - {label: "Programa (archivo PDF)", name: "programa", widget: "string", required: false}
+          - { label: "Pregunta", name: "question", widget: "string" }
+          - { label: "Respuesta", name: "answer", widget: "string" }
+          - { label: "Contenido", name: "contenido", widget: "text" }
+          - {
+              label: "Programa (archivo PDF)",
+              name: "programa",
+              widget: "string",
+              required: false,
+            }
+  - name: "planes"
+    label: "Planes"
+    folder: "_planes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - {
+          label: "Descripción",
+          name: "descripcion",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Imagen", name: "imagen", widget: "image" }
+      - { label: "Link", name: "link", widget: "string" }
+      - {
+          label: "Abrir en nueva pestaña",
+          name: "externo",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Orden", name: "orden", widget: "number", default: 1 }

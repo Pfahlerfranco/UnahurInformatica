@@ -14,8 +14,8 @@ url: ""
 #twitter_username: "gustavoquinalha"
 #github_username:  "gustavoquinalha"
 color_theme: "#4db6ad" #"#0081ff"
-color_text:  "#fff"
-language:  "es"
+color_text: "#fff"
+language: "es"
 
 # Build settings
 markdown: kramdown
@@ -31,3 +31,7 @@ remote_theme: gustavoquinalha/jekyll-help-center-theme
 # Plugins
 plugins_dir:
   - jekyll-admin
+
+collections:
+  planes:
+    output: false
