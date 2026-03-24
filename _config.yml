@@ -31,7 +31,3 @@ remote_theme: gustavoquinalha/jekyll-help-center-theme
 # Plugins
 plugins_dir:
   - jekyll-admin
-
-collections:
-  _planes:
-    output: false
