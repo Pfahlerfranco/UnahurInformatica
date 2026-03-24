@@ -33,5 +33,5 @@ plugins_dir:
   - jekyll-admin
 
 collections:
-  planes:
+  _planes:
     output: false
