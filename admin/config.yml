@@ -12,6 +12,28 @@ public_folder: "/assets/images/uploads"
 locale: "es"
 
 collections:
+  - name: "planes"
+    label: "Planes"
+    folder: "_planes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - {
+          label: "Descripción",
+          name: "descripcion",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Imagen", name: "imagen", widget: "image" }
+      - { label: "Link", name: "link", widget: "string" }
+      - {
+          label: "Abrir en nueva pestaña",
+          name: "externo",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Orden", name: "orden", widget: "number", default: 1 }
   - name: "posts"
     label: "Materias"
     folder: "_posts"
@@ -52,25 +74,3 @@ collections:
               widget: "string",
               required: false,
             }
-  - name: "planes"
-    label: "Planes"
-    folder: "_planes"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título", name: "titulo", widget: "string" }
-      - {
-          label: "Descripción",
-          name: "descripcion",
-          widget: "text",
-          required: false,
-        }
-      - { label: "Imagen", name: "imagen", widget: "image" }
-      - { label: "Link", name: "link", widget: "string" }
-      - {
-          label: "Abrir en nueva pestaña",
-          name: "externo",
-          widget: "boolean",
-          default: false,
-        }
-      - { label: "Orden", name: "orden", widget: "number", default: 1 }
