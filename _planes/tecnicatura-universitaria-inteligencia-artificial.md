@@ -8,5 +8,5 @@ descripcion: >-2
 imagen: assets/images/licenciatura.jpg
 link: /assets/pdf/planes/2023-Tecnicatura-Universitaria-Inteligencia-Artificial.pdf
 externo: true
-orden: 0
+orden: 1
 ---
