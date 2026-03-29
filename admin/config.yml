@@ -12,6 +12,33 @@ public_folder: "/assets/images"
 locale: "es"
 
 collections:
+  - name: "navegacion"
+    label: "Navegación"
+    files:
+      - name: "nav"
+        label: "Links del menú"
+        file: "_data/nav.yml"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - label: "Texto"
+                name: "label"
+                widget: "string"
+              - label: "URL"
+                name: "url"
+                widget: "string"
+              - label: "Abrir en nueva pestaña"
+                name: "external"
+                widget: "boolean"
+                default: false
+                required: false
+              - label: "Botón destacado"
+                name: "highlight"
+                widget: "boolean"
+                default: false
+                required: false
   - name: "planes"
     label: "Planes"
     folder: "_planes"
@@ -21,25 +48,20 @@ collections:
       - label: "Título"
         name: "titulo"
         widget: "string"
-
       - label: "Descripción"
         name: "descripcion"
         widget: "text"
         required: false
-
       - label: "Imagen"
         name: "imagen"
         widget: "image"
-
       - label: "Link"
         name: "link"
         widget: "string"
-
       - label: "Abrir en nueva pestaña"
         name: "externo"
         widget: "boolean"
         default: false
-
       - label: "Orden"
         name: "orden"
         widget: "number"
@@ -55,31 +77,25 @@ collections:
         name: "layout"
         widget: "hidden"
         default: "post"
-
       - label: "Título"
         name: "title"
         widget: "string"
-
       - label: "Fecha"
         name: "date"
         widget: "datetime"
         format: "YYYY-MM-DD HH:mm:ss"
-
       - label: "Categorías"
         name: "categories"
         widget: "string"
         default: "Materias"
-
       - label: "Autor"
         name: "by"
         widget: "string"
         default: "Informatica UNAHUR"
-
       - label: "Ícono"
         name: "icon"
         widget: "string"
         default: "cpu"
-
       - label: "Preguntas"
         name: "questions"
         widget: "list"
@@ -87,15 +103,12 @@ collections:
           - label: "Pregunta"
             name: "question"
             widget: "string"
-
           - label: "Respuesta"
             name: "answer"
             widget: "string"
-
           - label: "Contenido"
             name: "contenido"
             widget: "text"
-
           - label: "Programa (archivo PDF)"
             name: "programa"
             widget: "string"

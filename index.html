@@ -1,5 +1,5 @@
           <ul class="nav">
-            {% for item in site.nav %}
+            {% for item in site.data.nav.items %}
             <li class="scroll-to-section">
               {% if item.highlight %}
                 <div class="border-first-button"><a href="{{ item.url }}"{% if item.external %} target="_blank"{% endif %}>{{ item.label }}</a></div>
