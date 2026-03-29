@@ -5,8 +5,8 @@ backend:
 # Opcional: permite editar en local sin publicar
 # local_backend: true
 
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
 # Configuración en español
 locale: "es"
