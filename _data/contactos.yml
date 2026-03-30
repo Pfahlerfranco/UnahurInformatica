@@ -1,0 +1,20 @@
+subtitulo: "Contacto"
+titulo: "Comunicate con nosotros"
+
+imagen_decorativa: "/assets/images/contact-dec.png"
+
+items:
+  - nombre: "Email Informática"
+    url: "mailto:informatica@unahur.edu.ar"
+    icono: "/assets/images/email-icon.png"
+    externo: true
+
+  - nombre: "Sitio UNAHUR"
+    url: "https://unahur.edu.ar"
+    icono: "/assets/images/location-icon.png"
+    externo: true
+
+  - nombre: "Instagram"
+    url: "https://instagram.com/unahur"
+    icono: "/assets/images/phone-icon.png"
+    externo: true

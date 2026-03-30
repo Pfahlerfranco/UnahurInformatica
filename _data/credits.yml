@@ -1,0 +1,21 @@
+subtitulo: "CRÉDITOS"
+titulo: "Sobre Este Proyecto"
+
+botones:
+  - texto: "Repositorio en GitHub"
+    url: "https://github.com/pfahlerfranco/UnahurInformatica"
+    externo: true
+
+texto_previo_planilla: "También podés acceder a la planilla de planificación desde el siguiente botón:"
+
+planilla:
+  texto: "Abrir planilla"
+  url: "#"
+  externo: false
+
+explicacion_titulo: "¿Qué es esta herramienta?"
+descripcion: "Este sitio fue desarrollado para ayudar a estudiantes a planificar su cursada."
+
+explicacion_parrafos:
+  - "Permite visualizar planes de estudio y organizar materias."
+  - "No reemplaza al sistema oficial de la universidad."

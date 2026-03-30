@@ -1,0 +1,16 @@
+subtitulo: "Pregrado"
+titulo: "Carga horaria de las Tecnicaturas?"
+descripcion: "Los nuevos planes de pregrado tienen menor carga horaria. Son más específicos en los alcances del título y requieren una menor dedicación horaria de cursada semanal para que te puedas organizar mejor, sobre todo al inicio de la vida universitaria."
+imagen: "/assets/images/about-dec-v3.png"
+estadisticas:
+  - valor: "1408 hs"
+    detalle: "- 25% total"
+    porcentaje: 80
+  - valor: "14hs"
+    detalle: "x semana - 1er cuatri"
+    porcentaje: 70
+  - valor: "35"
+    detalle: "Créditos por actividades"
+    porcentaje: 100
+boton_texto: "Más información..."
+boton_url: "#services"

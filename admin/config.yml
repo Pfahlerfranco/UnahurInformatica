@@ -8,10 +8,120 @@ backend:
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
-# Configuración en español
 locale: "es"
 
 collections:
+  - name: "services"
+    label: "Sección Carreras"
+    files:
+      - name: "services"
+        label: "Propuestas formativas"
+        file: "_data/services.yml"
+        fields:
+          - label: "Subtítulo"
+            name: "subtitulo"
+            widget: "string"
+
+          - label: "Título"
+            name: "titulo"
+            widget: "string"
+
+          - label: "Carreras"
+            name: "carreras"
+            widget: "list"
+            fields:
+              - label: "Nombre"
+                name: "nombre"
+                widget: "string"
+
+              - label: "¿Es nueva?"
+                name: "nueva"
+                widget: "boolean"
+                default: false
+                required: false
+
+              - label: "Ícono"
+                name: "icono"
+                widget: "image"
+
+              - label: "Descripción corta"
+                name: "descripcion_corta"
+                widget: "text"
+
+              - label: "Habilidades"
+                name: "habilidades"
+                widget: "list"
+                field:
+                  label: "Habilidad"
+                  name: "habilidad"
+                  widget: "string"
+
+              - label: "Descripción larga"
+                name: "descripcion_larga"
+                widget: "text"
+
+              - label: "Imagen"
+                name: "imagen"
+                widget: "image"
+
+  - name: "about"
+    label: "Sección Pregrado"
+    files:
+      - name: "about"
+        label: "Carga horaria"
+        file: "_data/about.yml"
+        fields:
+          - label: "Subtítulo"
+            name: "subtitulo"
+            widget: "string"
+
+          - label: "Título"
+            name: "titulo"
+            widget: "string"
+
+          - label: "Descripción"
+            name: "descripcion"
+            widget: "text"
+
+          - label: "Imagen"
+            name: "imagen"
+            widget: "image"
+
+          - label: "Estadísticas"
+            name: "estadisticas"
+            widget: "list"
+            fields:
+              - label: "Valor"
+                name: "valor"
+                widget: "string"
+
+              - label: "Detalle"
+                name: "detalle"
+                widget: "string"
+
+              - label: "Porcentaje (0-100)"
+                name: "porcentaje"
+                widget: "number"
+                min: 0
+                max: 100
+                value_type: "int"
+
+          - label: "Texto del botón"
+            name: "boton_texto"
+            widget: "string"
+            required: false
+
+          - label: "URL del botón"
+            name: "boton_url"
+            widget: "string"
+            required: false
+
+          - label: "Botón externo"
+            name: "boton_externo"
+            widget: "boolean"
+            default: false
+            required: false
+
   - name: "navegacion"
     label: "Navegación"
     files:
@@ -26,76 +136,361 @@ collections:
               - label: "Texto"
                 name: "label"
                 widget: "string"
+
               - label: "URL"
                 name: "url"
                 widget: "string"
+
               - label: "Abrir en nueva pestaña"
                 name: "external"
                 widget: "boolean"
                 default: false
                 required: false
+
               - label: "Botón destacado"
                 name: "highlight"
                 widget: "boolean"
                 default: false
                 required: false
-  - name: "planes"
-    label: "Planes"
-    folder: "_planes"
+
+              - label: "Activo"
+                name: "active"
+                widget: "boolean"
+                default: false
+                required: false
+
+  - name: "banners"
+    label: "Banners"
+    label_singular: "Banner"
+    folder: "_banners"
     create: true
+    delete: true
     slug: "{{slug}}"
+    identifier_field: "titulo"
     fields:
+      - label: "Subtítulo"
+        name: "subtitulo"
+        widget: "string"
+        required: false
+        default: "UNAHUR Informática"
+
       - label: "Título"
         name: "titulo"
         widget: "string"
+
       - label: "Descripción"
         name: "descripcion"
         widget: "text"
+
+      - label: "Texto del botón"
+        name: "boton_texto"
+        widget: "string"
         required: false
+
+      - label: "URL del botón"
+        name: "boton_url"
+        widget: "string"
+        required: false
+
+      - label: "Botón externo"
+        name: "boton_externo"
+        widget: "boolean"
+        default: false
+        required: false
+
       - label: "Imagen"
         name: "imagen"
         widget: "image"
-      - label: "Link"
-        name: "link"
-        widget: "string"
-      - label: "Abrir en nueva pestaña"
-        name: "externo"
-        widget: "boolean"
-        default: false
+
       - label: "Orden"
         name: "orden"
         widget: "number"
         default: 1
+        value_type: "int"
+
+      - label: "Activo"
+        name: "activo"
+        widget: "boolean"
+        default: true
+
+  - name: "blog_section"
+    label: "Documentación destacada"
+    files:
+      - name: "blog"
+        label: "Sección Blog"
+        file: "_data/blog.yml"
+        fields:
+          - label: "Subtítulo"
+            name: "subtitulo"
+            widget: "string"
+
+          - label: "Título"
+            name: "titulo"
+            widget: "string"
+
+          - label: "Post destacado"
+            name: "destacado"
+            widget: "object"
+            fields:
+              - label: "Categoría"
+                name: "categoria"
+                widget: "string"
+                required: false
+
+              - label: "Fecha"
+                name: "fecha"
+                widget: "string"
+                required: false
+
+              - label: "Título"
+                name: "titulo"
+                widget: "string"
+
+              - label: "Descripción"
+                name: "descripcion"
+                widget: "text"
+
+              - label: "Imagen"
+                name: "imagen"
+                widget: "image"
+
+              - label: "URL"
+                name: "url"
+                widget: "string"
+
+              - label: "Autor texto"
+                name: "autor_texto"
+                widget: "string"
+                required: false
+
+              - label: "Autor imagen"
+                name: "autor_imagen"
+                widget: "image"
+                required: false
+
+          - label: "Items laterales"
+            name: "items"
+            widget: "list"
+            fields:
+              - label: "Categoría"
+                name: "categoria"
+                widget: "string"
+                required: false
+
+              - label: "Fecha"
+                name: "fecha"
+                widget: "string"
+                required: false
+
+              - label: "Título"
+                name: "titulo"
+                widget: "string"
+
+              - label: "Descripción"
+                name: "descripcion"
+                widget: "text"
+
+              - label: "Imagen"
+                name: "imagen"
+                widget: "image"
+
+              - label: "URL"
+                name: "url"
+                widget: "string"
+
+  - name: "credits_section"
+    label: "Sección Créditos"
+    files:
+      - name: "credits"
+        label: "Créditos"
+        file: "_data/credits.yml"
+        fields:
+          - label: "Subtítulo"
+            name: "subtitulo"
+            widget: "string"
+
+          - label: "Título"
+            name: "titulo"
+            widget: "string"
+
+          - label: "Botones"
+            name: "botones"
+            widget: "list"
+            required: false
+            fields:
+              - label: "Texto"
+                name: "texto"
+                widget: "string"
+
+              - label: "URL"
+                name: "url"
+                widget: "string"
+
+              - label: "Externo"
+                name: "externo"
+                widget: "boolean"
+                default: false
+                required: false
+
+          - label: "Texto previo a planilla"
+            name: "texto_previo_planilla"
+            widget: "text"
+            required: false
+
+          - label: "Planilla"
+            name: "planilla"
+            widget: "object"
+            required: false
+            fields:
+              - label: "Texto"
+                name: "texto"
+                widget: "string"
+
+              - label: "URL"
+                name: "url"
+                widget: "string"
+
+              - label: "Externo"
+                name: "externo"
+                widget: "boolean"
+                default: true
+                required: false
+
+          - label: "Título explicación"
+            name: "explicacion_titulo"
+            widget: "string"
+            required: false
+
+          - label: "Descripción"
+            name: "descripcion"
+            widget: "text"
+            required: false
+
+          - label: "Párrafos explicación"
+            name: "explicacion_parrafos"
+            widget: "list"
+            required: false
+            field:
+              label: "Párrafo"
+              name: "parrafo"
+              widget: "text"
+
+  - name: "contactos_section"
+    label: "Sección Contactos"
+    files:
+      - name: "contactos"
+        label: "Contactos"
+        file: "_data/contactos.yml"
+        fields:
+          - label: "Subtítulo"
+            name: "subtitulo"
+            widget: "string"
+
+          - label: "Título"
+            name: "titulo"
+            widget: "string"
+
+          - label: "Imagen decorativa"
+            name: "imagen_decorativa"
+            widget: "image"
+            required: false
+
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - label: "Nombre"
+                name: "nombre"
+                widget: "string"
+
+              - label: "URL"
+                name: "url"
+                widget: "string"
+
+              - label: "Ícono"
+                name: "icono"
+                widget: "image"
+
+              - label: "Externo"
+                name: "externo"
+                widget: "boolean"
+                default: false
+                required: false
+
+  - name: "planes"
+    label: "Planes"
+    label_singular: "Plan"
+    folder: "_planes"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: "titulo"
+    fields:
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+
+      - label: "Descripción"
+        name: "descripcion"
+        widget: "text"
+        required: false
+
+      - label: "Imagen"
+        name: "imagen"
+        widget: "image"
+
+      - label: "Link"
+        name: "link"
+        widget: "string"
+
+      - label: "Abrir en nueva pestaña"
+        name: "externo"
+        widget: "boolean"
+        default: false
+        required: false
+
+      - label: "Orden"
+        name: "orden"
+        widget: "number"
+        default: 1
+        value_type: "int"
 
   - name: "posts"
     label: "Materias"
     folder: "_posts"
     create: true
+    delete: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - label: "Layout"
         name: "layout"
         widget: "hidden"
         default: "post"
+
       - label: "Título"
         name: "title"
         widget: "string"
+
       - label: "Fecha"
         name: "date"
         widget: "datetime"
         format: "YYYY-MM-DD HH:mm:ss"
+
       - label: "Categorías"
         name: "categories"
         widget: "string"
         default: "Materias"
+
       - label: "Autor"
         name: "by"
         widget: "string"
         default: "Informatica UNAHUR"
+
       - label: "Ícono"
         name: "icon"
         widget: "string"
         default: "cpu"
+
       - label: "Preguntas"
         name: "questions"
         widget: "list"
@@ -103,13 +498,16 @@ collections:
           - label: "Pregunta"
             name: "question"
             widget: "string"
+
           - label: "Respuesta"
             name: "answer"
             widget: "string"
+
           - label: "Contenido"
             name: "contenido"
             widget: "text"
+
           - label: "Programa (archivo PDF)"
             name: "programa"
-            widget: "string"
+            widget: "file"
             required: false
