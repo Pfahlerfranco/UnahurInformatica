@@ -14,3 +14,7 @@ items:
     url: https://www.instagram.com/unahurlingham/
     icono: /assets/images/phone-icon.png
     externo: true
+  - externo: true
+    nombre: Discord
+    url: https://discord.com/invite/tqyHtPt
+    icono: /assets/uploads/discord-icon.png
