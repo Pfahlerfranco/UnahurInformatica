@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Pfahlerfranco/UnahurInformatica
   branch: main
-  base_url: https://TU-PROXY-OAUTH.vercel.app
+  base_url: https://decap-cms-oauth-zeta.vercel.app
 
 # Opcional: permite editar en local sin publicar
 # local_backend: true
