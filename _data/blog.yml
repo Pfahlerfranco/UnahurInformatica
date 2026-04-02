@@ -1,34 +1,31 @@
-subtitulo: "Documentación"
-titulo: "Documentación y recursos"
-
+subtitulo: Documentación
+titulo: Documentación y recursos
 destacado:
-  categoria: "Guía"
+  categoria: Guía
   fecha: "2026"
-  titulo: "¿Cómo inscribirse a materias?"
-  descripcion: "Guía paso a paso para realizar la inscripción correctamente desde el SIU Guaraní."
-  imagen: "/assets/images/blog-post-01.jpg"
+  titulo: ¿Cómo inscribirse a materias?
+  descripcion: Guía paso a paso para realizar la inscripción correctamente desde
+    el SIU Guaraní.
+  imagen: /assets/images/blog-post-01.jpg
   url: "#"
-  autor_texto: "UNAHUR Informática"
-  autor_imagen: "/assets/images/author-post.jpg"
-
+  autor_texto: UNAHUR Informática
+  autor_imagen: /assets/images/author-post.jpg
 items:
-  - categoria: "Calendario"
+  - categoria: Calendario
     fecha: "2026"
-    titulo: "Calendario académico"
-    descripcion: "Fechas importantes de cursada, exámenes y recesos."
-    imagen: "/assets/images/blog-post-02.jpg"
+    titulo: Calendario académico
+    descripcion: Fechas importantes de cursada, exámenes y recesos.
+    imagen: /assets/uploads/desarrolladores.jpg
+    url: https://unahur.edu.ar/calendario-academico/
+  - categoria: Correlatividades
+    fecha: "2026"
+    titulo: Requisitos de materias
+    descripcion: Conocé qué necesitás para cursar cada materia.
+    imagen: /assets/images/blog-post-03.jpg
     url: "#"
-
-  - categoria: "Correlatividades"
+  - categoria: Consejos
     fecha: "2026"
-    titulo: "Requisitos de materias"
-    descripcion: "Conocé qué necesitás para cursar cada materia."
-    imagen: "/assets/images/blog-post-03.jpg"
-    url: "#"
-
-  - categoria: "Consejos"
-    fecha: "2026"
-    titulo: "Cómo organizar tu cursada"
-    descripcion: "Tips para planificar mejor tu año académico."
-    imagen: "/assets/images/blog-post-04.jpg"
+    titulo: Cómo organizar tu cursada
+    descripcion: Tips para planificar mejor tu año académico.
+    imagen: /assets/images/blog-post-04.jpg
     url: "#"
