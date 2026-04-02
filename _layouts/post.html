@@ -86,10 +86,22 @@ layout: default
             </span>
           </div>
           {% endif %}
-          {% if x.programa %}
-          <div>
-            <a href="{{ site.baseurl }}/assets/pdf/programas/{{ x.programa }}" target="_blank"><button>Programa de la materia</button></a>
-          </div>
+          {% if page.programa %}
+            {% assign programa_url = page.programa %}
+
+            {% unless programa_url contains '://' or programa_url contains 'mailto:' or programa_url contains 'tel:' %}
+              {% if programa_url contains '/' %}
+                {% assign programa_url = programa_url | relative_url %}
+              {% else %}
+                {% assign programa_url = '/assets/pdf/programas/' | append: programa_url | relative_url %}
+              {% endif %}
+            {% endunless %}
+
+            <div>
+              <a href="{{ programa_url }}" target="_blank" rel="noopener noreferrer">
+                <button>Programa de la materia</button>
+              </a>
+            </div>
           {% endif %}
         </div>
       </div>

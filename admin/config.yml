@@ -1,14 +1,22 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Pfahlerfranco/UnahurInformatica
   branch: main
+  base_url: https://TU-PROXY-OAUTH.vercel.app
 
 # Opcional: permite editar en local sin publicar
 # local_backend: true
 
-media_folder: "assets/images"
-public_folder: "/assets/images"
+site_url: https://pfahlerfranco.github.io/UnahurInformatica
+display_url: https://pfahlerfranco.github.io/UnahurInformatica
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 locale: "es"
+
+editor:
+  preview: false
 
 collections:
   - name: "services"
@@ -490,6 +498,11 @@ collections:
         name: "icon"
         widget: "string"
         default: "cpu"
+      
+      - label: "Programa (archivo PDF)"
+        name: "programa"
+        widget: "file"
+        required: false
 
       - label: "Preguntas"
         name: "questions"
@@ -506,8 +519,3 @@ collections:
           - label: "Contenido"
             name: "contenido"
             widget: "text"
-
-          - label: "Programa (archivo PDF)"
-            name: "programa"
-            widget: "file"
-            required: false

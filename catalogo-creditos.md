@@ -6,7 +6,7 @@ permalink: /catalogo-creditos/
 
 ---
 
-[![Catálogo de créditos en PDF](/assets/images/pdf.jpg) Descargar el catálogo en versión PDF](/assets/pdf/creditos/202206-catalogo-creditos-tecnicaturas-informatica.pdf)
+[![Catálogo de créditos en PDF]({{ '/assets/images/pdf.jpg' | relative_url }}) Descargar el catálogo en versión PDF]({{ '/assets/pdf/creditos/202206-catalogo-creditos-tecnicaturas-informatica.pdf' | relative_url }})s
 
 
 <style>
