@@ -1,0 +1,144 @@
+---
+layout: page
+---
+
+<h2>Datos importantes</h2>
+
+<p><strong>Horas totales:</strong> {{ page.total_horas }}</p>
+<p><strong>Créditos:</strong> {{ page.creditos }}</p>
+{% if page.pdf %}
+<p>
+  <a href="{{ page.pdf | relative_url }}" target="_blank" class="btn btn-primary">
+    📄 Descargar plan en PDF
+  </a>
+</p>
+{% endif %}
+<style>
+  .tableizer-table {
+    font-size: 12px;
+    border: 1px solid #CCC;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+  }
+
+  .tableizer-table td,
+  .tableizer-table th {
+    padding: 4px;
+    border: 1px solid #CCC;
+  }
+
+  .tableizer-table th {
+    background-color: #104E8B;
+    color: #FFF;
+    font-weight: bold;
+  }
+
+  .tableizer-cuatrimestre {
+    font-weight: bold;
+    text-align: center;
+    background-color: #EEE;
+  }
+
+  .tableizer-table a {
+    color: #1A0A2E;
+    /* azul oscuro */
+    text-decoration: underline;
+  }
+
+  .tableizer-table a:hover {
+    color: #104E8B;
+    /* azul al pasar mouse */
+  }
+  .btn-primary {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+</style>
+<hr>
+
+<h2>Plan de estudios</h2>
+
+<table class="tableizer-table">
+  <thead>
+    <tr>
+      <th>Área</th>
+      <th>Asignatura</th>
+      <th>Hs por Sem</th>
+      <th>Carga horaria total</th>
+      <th>Correlatividades</th>
+    </tr>
+  </thead>
+
+<tbody>
+  {% for cuatri in page.cuatrimestres %}
+
+  <tr>
+    <td colspan="5" class="tableizer-cuatrimestre">
+      {{ cuatri.nombre }} — {{ cuatri.horas }} hs
+    </td>
+  </tr>
+
+  {% for materia in cuatri.materias %}
+  <tr>
+    <td>{{ materia.area }}</td>
+
+    <td>
+      <a href="{{ '/materias/' | append: materia.slug | append: '/' | relative_url }}">
+        {{ materia.nombre }}
+      </a>
+    </td>
+
+    <td>{{ materia.hs_sem }}</td>
+    <td>{{ materia.hs_total }}</td>
+
+    <td>
+      {% if materia.correlativas != "-" %}
+
+      {% assign correlativas = materia.correlativas | split: "," %}
+
+      {% for c in correlativas %}
+      {% assign c_name = c | strip %}
+
+      {% assign found = false %}
+
+      {% for cu in page.cuatrimestres %}
+      {% for m in cu.materias %}
+
+      {% if m.nombre == c_name %}
+      <a href="{{ '/materias/' | append: m.slug | append: '/' | relative_url }}">
+        {{ c_name }}
+      </a>
+
+      {% unless forloop.last %}, {% endunless %}
+
+      {% assign found = true %}
+      {% endif %}
+
+      {% endfor %}
+      {% endfor %}
+
+      {% unless found %}
+      {{ c_name }}
+      {% unless forloop.last %}, {% endunless %}
+      {% endunless %}
+
+      {% endfor %}
+
+      {% else %}
+      -
+      {% endif %}
+    </td>
+
+  </tr>
+  {% endfor %}
+
+  {% endfor %}
+</tbody>

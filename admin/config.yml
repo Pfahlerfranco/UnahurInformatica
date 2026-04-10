@@ -498,7 +498,7 @@ collections:
         name: "icon"
         widget: "string"
         default: "cpu"
-      
+
       - label: "Programa (archivo PDF)"
         name: "programa"
         widget: "file"
@@ -519,3 +519,37 @@ collections:
           - label: "Contenido"
             name: "contenido"
             widget: "text"
+  - name: "carreras"
+    label: "Carreras"
+    folder: "_carreras"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    output: true # <-- esto es clave
+    identifier_field: "title"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Horas Totales", name: "total_horas", widget: "number" }
+      - { label: "Créditos", name: "creditos", widget: "number" }
+      - { label: "PDF del plan", name: "pdf", widget: "file", required: false }
+      - label: "Cuatrimestres / Años"
+        name: "cuatrimestres"
+        widget: "list"
+        fields:
+          - { label: "Nombre", name: "nombre", widget: "string" }
+          - { label: "Horas", name: "horas", widget: "string", required: false }
+          - label: "Materias"
+            name: "materias"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Área", name: "area", widget: "string" }
+              - { label: "Hs Semanales", name: "hs_sem", widget: "number" }
+              - { label: "Hs Totales", name: "hs_total", widget: "number" }
+              - {
+                  label: "Correlativas",
+                  name: "correlativas",
+                  widget: "string",
+                }

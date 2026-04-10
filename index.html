@@ -213,7 +213,8 @@ layout: main
                   {% for carrera in site.data.services.carreras %}
                   <div class="{% if forloop.first %}first-thumb active{% elsif forloop.last %}last-thumb{% endif %}">
                     <div class="thumb">
-                      <span class="icon"><img src="{{ carrera.icono | relative_url }}" alt="{{ carrera.nombre }}"></span>
+                      <span class="icon"><img src="{{ carrera.icono | relative_url }}"
+                          alt="{{ carrera.nombre }}"></span>
                       {% if carrera.nueva %}<span style="color: red">NUEVA:</span> {% endif %}{{ carrera.nombre }}
                     </div>
                   </div>
@@ -224,20 +225,21 @@ layout: main
               <div class="col-lg-12">
                 <ul class="nacc">
                   {% for carrera in site.data.services.carreras %}
-                  <li{% if forloop.first %} class="active"{% endif %}>
+                  <li{% if forloop.first %} class="active" {% endif %}>
                     <div>
                       <div class="thumb">
                         <div class="row">
                           <div class="col-lg-6 align-self-center">
                             <div class="left-text">
-                              <h4>{% if carrera.nueva %}<span style="color: red">NUEVA:</span> {% endif %}{{ carrera.nombre }}</h4>
+                              <h4>{% if carrera.nueva %}<span style="color: red">NUEVA:</span> {% endif %}{{
+                                carrera.nombre }}</h4>
                               <p>{{ carrera.descripcion_corta }}</p>
 
                               {% if carrera.habilidades %}
                               <div class="ticks-list">
                                 {% for habilidad in carrera.habilidades %}
-                                  {% assign texto_habilidad = habilidad.habilidad | default: habilidad %}
-                                  <span><i class="fa fa-check"></i> {{ texto_habilidad }}</span>
+                                {% assign texto_habilidad = habilidad.habilidad | default: habilidad %}
+                                <span><i class="fa fa-check"></i> {{ texto_habilidad }}</span>
                                 {% endfor %}
                               </div>
                               {% endif %}
@@ -254,8 +256,8 @@ layout: main
                         </div>
                       </div>
                     </div>
-                  </li>
-                  {% endfor %}
+                    </li>
+                    {% endfor %}
                 </ul>
               </div>
             </div>
@@ -268,15 +270,16 @@ layout: main
 </div>
 {% endif %}
 
-{% assign planes_ordenados = site.planes | sort: "orden" %}
-{% if planes_ordenados and planes_ordenados.size > 0 %}
+{% assign carreras_ordenadas = site.carreras | sort: "orden" %}
+
+{% if carreras_ordenadas.size > 0 %}
 <div id="portfolio" class="our-portfolio section">
   <div class="container">
     <div class="row">
       <div class="col-lg-5">
         <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-          <h6>Planes</h6>
-          <h4>Analizalos, leelos y <em>Comparalos</em></h4>
+          <h6>Carreras</h6>
+          <h4>Conocé todas nuestras <em>Propuestas Formativas</em></h4>
           <div class="line-dec"></div>
         </div>
       </div>
@@ -287,30 +290,33 @@ layout: main
     <div class="row">
       <div class="col-lg-12">
         <div class="loop owl-carousel">
-          {% for plan in planes_ordenados %}
+
+          {% for carrera in carreras_ordenadas %}
           <div class="item">
-            {% assign plan_url = plan.link %}
-            {% unless plan.externo %}
-              {% if plan_url contains '://' or plan_url contains '#' or plan_url contains 'mailto:' or plan_url contains 'tel:' %}
-              {% else %}
-                {% assign plan_url = plan_url | relative_url %}
-              {% endif %}
-            {% endunless %}
-            <a href="{{ plan_url }}"{% if plan.externo %} target="_blank" rel="noopener noreferrer"{% endif %}>
+            <a href="{{ carrera.url | relative_url }}">
               <div class="portfolio-item">
+
                 <div class="thumb">
-                  <img src="{{ plan.imagen | relative_url }}" alt="{{ plan.titulo }}" loading="lazy">
-                </div>
-                <div class="down-content">
-                  <h4>{{ plan.titulo }}</h4>
-                  {% if plan.descripcion %}
-                  <span>{{ plan.descripcion }}</span>
+                  {% if carrera.imagen %}
+                  <img src="{{ carrera.imagen | relative_url }}" alt="{{ carrera.title }}" loading="lazy">
+                  {% else %}
+                  <img src="{{ '/assets/images/default.jpg' | relative_url }}" alt="{{ carrera.title }}" loading="lazy">
                   {% endif %}
                 </div>
+
+                <div class="down-content">
+                  <h4>{{ carrera.title }}</h4>
+
+                  {% if carrera.descripcion_corta %}
+                  <span>{{ carrera.descripcion_corta }}</span>
+                  {% endif %}
+                </div>
+
               </div>
             </a>
           </div>
           {% endfor %}
+
         </div>
       </div>
     </div>
