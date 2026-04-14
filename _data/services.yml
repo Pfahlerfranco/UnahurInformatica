@@ -100,3 +100,10 @@ carreras:
       sistemas de comunicación de datos y software cuya utilización pueda
       afectar la seguridad, salud, bienes o derechos.
     imagen: /assets/images/services-image.jpg
+  - nueva: true
+    nombre: Licenciatura en CiberSeguridad
+    icono: https://latam.kaspersky.com/content/es-mx/images/repository/isc/2020/cyber-security-article.jpg
+    descripcion_corta: Ciberseguridad
+    habilidades:
+      - Redes
+      - Hacking
