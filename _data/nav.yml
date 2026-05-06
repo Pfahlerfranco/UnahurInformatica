@@ -1,16 +1,16 @@
 items:
-  - label: Home
+  - label: Inicio
     url: "#top"
     active: true
-  - label: Planes
+  - label: Carreras
     url: "#portfolio"
   - label: Materias
     url: /materias/
+  - label: Créditos
+    url: "#free-quote"
+  - label: Novedades
+    url: /novedades/
+  - label: Horarios
+    url: /horarios/
   - label: Contactos
     url: "#contactos"
-  - label: Horarios
-    url: https://bit.ly/informatica-unahur-horarios-2024-2c
-    external: true
-  - label: Sobre los CRÉDITOS
-    url: "#free-quote"
-    highlight: true

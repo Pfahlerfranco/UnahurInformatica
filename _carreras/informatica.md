@@ -2,6 +2,30 @@
 layout: carrera
 title: "Licenciatura en Informática"
 permalink: /licenciatura-informatica/
+vigente: true
+orden: 1
+icono: /assets/img/Informatica-licenciatura-icono.png
+descripcion_corta: "Licenciatura con título intermedio Técnico/a Universitario en Programación."
+titulo_intermedio: "Técnico/a Universitario en Programación"
+tabla_datos:
+  col_grado: "Licenciado/a en Informática"
+  col_intermedio: "Técnico/a Universitario en Programación"
+  filas:
+    - label: "Duración"
+      grado: "4,5 años"
+      intermedio: "2,5 años"
+    - label: "Horas Interacción pedagógica"
+      grado: "3200"
+      intermedio: "1184"
+    - label: "Materias"
+      grado: "45"
+      intermedio: "17"
+    - label: "Créditos ACA"
+      grado: "30"
+      intermedio: "12"
+    - label: "Créditos Totales"
+      grado: "287"
+      intermedio: "120"
 total_horas: 3520
 creditos: 0
 imagen: "assets/images/licenciatura.jpg"

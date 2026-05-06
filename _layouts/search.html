@@ -7,6 +7,194 @@ layout: default
 
 <div class="content-post">
   <div class="size margin">
-    {% include posts.html %}
+
+    <!-- Filtros de materias -->
+    <div style="margin-bottom: 24px; padding: 16px; background:#f8f9fa; border-radius:8px;">
+      <div style="margin-bottom:12px;">
+        <strong style="font-size:0.85rem; color:#555; text-transform:uppercase; letter-spacing:0.5px;">Filtrar por plan:</strong>
+        <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px;">
+          <button onclick="filtrarMaterias('plan', 'todos')" class="filtro-btn active" id="btn-plan-todos"
+            style="padding:6px 16px; border:1px solid #4db6ad; border-radius:20px; background:#4db6ad; color:#fff; cursor:pointer; font-size:0.85rem;">
+            Todos
+          </button>
+          <button onclick="filtrarMaterias('plan', 'vigente')" class="filtro-btn" id="btn-plan-vigente"
+            style="padding:6px 16px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.85rem;">
+            Plan vigente 2026
+          </button>
+          <button onclick="filtrarMaterias('plan', 'anterior')" class="filtro-btn" id="btn-plan-anterior"
+            style="padding:6px 16px; border:1px solid #6c757d; border-radius:20px; background:#fff; color:#6c757d; cursor:pointer; font-size:0.85rem;">
+            Plan anterior
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <strong style="font-size:0.85rem; color:#555; text-transform:uppercase; letter-spacing:0.5px;">Filtrar por carrera:</strong>
+        <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px;">
+          <button onclick="filtrarMaterias('carrera', 'todas')" class="filtro-carrera-btn active" id="btn-carrera-todas"
+            style="padding:5px 14px; border:1px solid #888; border-radius:20px; background:#888; color:#fff; cursor:pointer; font-size:0.8rem;">
+            Todas
+          </button>
+          <button onclick="filtrarMaterias('carrera', 'informatica')" class="filtro-carrera-btn" id="btn-carrera-informatica"
+            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
+            Lic. Informática
+          </button>
+          <button onclick="filtrarMaterias('carrera', 'ciberseguridad')" class="filtro-carrera-btn" id="btn-carrera-ciberseguridad"
+            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
+            Lic. Ciberseguridad
+          </button>
+          <button onclick="filtrarMaterias('carrera', 'videojuegos')" class="filtro-carrera-btn" id="btn-carrera-videojuegos"
+            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
+            Lic. Videojuegos
+          </button>
+          <button onclick="filtrarMaterias('carrera', 'ia')" class="filtro-carrera-btn" id="btn-carrera-ia"
+            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
+            Tec. IA
+          </button>
+          <button onclick="filtrarMaterias('carrera', 'programacion')" class="filtro-carrera-btn" id="btn-carrera-programacion"
+            style="padding:5px 14px; border:1px solid #999; border-radius:20px; background:#fff; color:#999; cursor:pointer; font-size:0.8rem;">
+            Tec. Programación
+          </button>
+          <button onclick="filtrarMaterias('carrera', 'redes')" class="filtro-carrera-btn" id="btn-carrera-redes"
+            style="padding:5px 14px; border:1px solid #999; border-radius:20px; background:#fff; color:#999; cursor:pointer; font-size:0.8rem;">
+            Tec. Redes
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- /Filtros -->
+
+    <div id="lista-materias">
+      {% if site.posts.size == 0 %}
+      <h2>No hay materias disponibles</h2>
+      {% else %}
+
+      {% for post in site.posts %}
+      {% assign carreras_answer = "" %}
+      {% for q in post.questions %}
+        {% if q.question == "CARRERAS" %}
+          {% assign carreras_answer = q.answer %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign data_carrera = "" %}
+      {% if carreras_answer contains "Inteligencia Artificial" %}{% assign data_carrera = data_carrera | append: " ia" %}{% endif %}
+      {% if carreras_answer contains "Videojuegos" %}{% assign data_carrera = data_carrera | append: " videojuegos" %}{% endif %}
+      {% if carreras_answer contains "Ciberseguridad" %}{% assign data_carrera = data_carrera | append: " ciberseguridad" %}{% endif %}
+      {% if carreras_answer contains "Redes" %}{% assign data_carrera = data_carrera | append: " redes" %}{% endif %}
+      {% if carreras_answer contains "Informática" %}{% assign data_carrera = data_carrera | append: " informatica" %}{% endif %}
+      {% if carreras_answer contains "Programación" %}
+        {% unless carreras_answer contains "Videojuegos" %}
+          {% assign data_carrera = data_carrera | append: " programacion" %}
+        {% endunless %}
+      {% endif %}
+
+      {% assign data_plan = post.plan | default: "" %}
+      {% if data_plan == "" %}
+        {% if data_carrera contains "ia" or data_carrera contains "informatica" or data_carrera contains "videojuegos" or data_carrera contains "ciberseguridad" %}
+          {% assign data_plan = "vigente" %}
+        {% else %}
+          {% assign data_plan = "anterior" %}
+        {% endif %}
+      {% endif %}
+
+      <a href="{{ site.baseurl }}{{ post.url }}"
+         class="list-item container materia-item"
+         data-plan="{{ data_plan }}"
+         data-carrera="{{ data_carrera | strip }}"
+         data-aos="fade-up" data-aos-offset="0" data-aos-delay="100">
+
+        <div class="list-item-icon container align-items-center justify-content-center">
+          <span class="feather-icon icon-{{post.icon}}" data-aos="fade-right" data-aos-offset="0" data-aos-delay="500"></span>
+        </div>
+
+        <div class="flex-grow-1">
+          <div class="" data-aos="fade-up" data-aos-delay="600" data-aos-offset="0">
+            <h2 class="list-post-title">
+              {{ post.title }}
+            </h2>
+          </div>
+
+          <!-- Tags de carrera y plan -->
+          <div style="margin: 4px 0 6px; display:flex; flex-wrap:wrap; gap:6px;">
+            {% if post.carrera %}
+              {% assign carreras_post = post.carrera %}
+              {% if carreras_post.size and carreras_post != "" %}
+                {% for c in carreras_post %}
+                <span style="background:#e8f5f4; color:#2a7a74; padding:2px 8px; border-radius:12px; font-size:0.72rem; border:1px solid #4db6ad;">{{ c }}</span>
+                {% endfor %}
+              {% else %}
+                <span style="background:#e8f5f4; color:#2a7a74; padding:2px 8px; border-radius:12px; font-size:0.72rem; border:1px solid #4db6ad;">{{ post.carrera }}</span>
+              {% endif %}
+            {% endif %}
+            {% if post.plan == "vigente" %}
+            <span style="background:#d4edda; color:#155724; padding:2px 8px; border-radius:12px; font-size:0.72rem;">Plan 2026</span>
+            {% elsif post.plan == "anterior" %}
+            <span style="background:#e2e3e5; color:#383d41; padding:2px 8px; border-radius:12px; font-size:0.72rem;">Plan anterior</span>
+            {% endif %}
+            {% if post.carga_horaria %}
+            <span style="color:#888; font-size:0.72rem;">⏱ {{ post.carga_horaria }}</span>
+            {% endif %}
+          </div>
+
+          <div class="" data-aos="fade-up" data-aos-delay="700" data-aos-offset="0">
+            <span class="list-post-description">{{ post.description }}</span>
+          </div>
+        </div>
+
+      </a>
+      {% endfor %}
+      {% endif %}
+    </div>
+
   </div>
 </div>
+
+<script>
+var filtroActual = { plan: 'todos', carrera: 'todas' };
+
+function filtrarMaterias(tipo, valor) {
+  filtroActual[tipo] = valor;
+
+  // Actualizar botones activos
+  if (tipo === 'plan') {
+    document.querySelectorAll('.filtro-btn').forEach(function(btn) {
+      btn.style.background = '#fff';
+      btn.style.color = btn.id.includes('anterior') ? '#6c757d' : '#4db6ad';
+    });
+    var btnActivo = document.getElementById('btn-plan-' + valor);
+    if (btnActivo) {
+      btnActivo.style.background = btnActivo.id.includes('anterior') ? '#6c757d' : '#4db6ad';
+      btnActivo.style.color = '#fff';
+    }
+  } else {
+    var coloresCarrera = {
+      'todas': '#888', 'programacion': '#999', 'redes': '#999'
+    };
+    document.querySelectorAll('.filtro-carrera-btn').forEach(function(btn) {
+      var key = btn.id.replace('btn-carrera-', '');
+      var color = coloresCarrera[key] || '#4db6ad';
+      btn.style.background = '#fff';
+      btn.style.color = color;
+    });
+    var btnCarrera = document.getElementById('btn-carrera-' + valor);
+    if (btnCarrera) {
+      var colorActivo = coloresCarrera[valor] || '#4db6ad';
+      btnCarrera.style.background = colorActivo;
+      btnCarrera.style.color = '#fff';
+    }
+  }
+
+  // Filtrar items
+  var items = document.querySelectorAll('.materia-item');
+  items.forEach(function(item) {
+    var itemPlan = item.getAttribute('data-plan') || '';
+    var itemCarrera = item.getAttribute('data-carrera') || '';
+
+    var pasaPlan = filtroActual.plan === 'todos' || itemPlan === filtroActual.plan;
+    var pasaCarrera = filtroActual.carrera === 'todas' || itemCarrera.includes(filtroActual.carrera);
+
+    item.style.display = (pasaPlan && pasaCarrera) ? '' : 'none';
+  });
+}
+</script>

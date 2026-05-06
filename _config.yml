@@ -1,9 +1,9 @@
 # ==========================
 # Site
 # ==========================
-title: "Planes y materias"
+title: "Informática UNAHUR"
 email: informatica@unahur.edu.ar
-description: "Ayuda para la inscripción a materias"
+description: "Carreras, materias, horarios y novedades del Instituto de Tecnología e Ingeniería - UNAHUR"
 
 url: "https://pfahlerfranco.github.io"
 baseurl: "/UnahurInformatica"
@@ -54,6 +54,10 @@ collections:
     output: true
     permalink: /:name/
 
+  novedades:
+    output: true
+    permalink: /novedades/:slug/
+
 # ==========================
 # Defaults (IMPORTANTE)
 # asegura que las carreras usen layout page
@@ -63,4 +67,9 @@ defaults:
       path: ""
       type: "carreras"
     values:
-      layout: "page"
+      layout: "carrera"
+  - scope:
+      path: ""
+      type: "novedades"
+    values:
+      layout: "novedad"

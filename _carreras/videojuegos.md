@@ -1,7 +1,11 @@
 ---
 layout: carrera
-title: "Tecnicatura Universitaria en Desarrollo de Videojuegos"
+title: "Tecnicatura Universitaria en Programación de Videojuegos"
 permalink: /tecnicatura-desarrollo-videojuegos/
+anterior: true
+orden: 5
+icono: /assets/img/videojuegos-icono.png
+descripcion_corta: "Plan anterior. Vigente hasta 2026 1° Cuatrimestre."
 imagen: "assets/images/planes-programacion.jpg"
 pdf: /assets/pdf/planes/2022-Plan-Tecnicatura-Universitaria-en-Programacion-de-Videojuegos.pdf
 total_horas: 1408

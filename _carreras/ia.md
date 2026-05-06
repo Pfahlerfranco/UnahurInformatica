@@ -1,7 +1,11 @@
 ---
 layout: carrera
-title: "tecnicatura universitaria en inteligencia artificial"
+title: "Tecnicatura Universitaria en Inteligencia Artificial"
 permalink: /tecnicatura-inteligencia-artificial/
+vigente: true
+orden: 4
+icono: /assets/img/Inteligencia-artificial-icono.png
+descripcion_corta: "Formación en IA, aprendizaje automático y procesamiento de datos."
 imagen: assets/images/licenciatura.jpg
 pdf: /assets/pdf/planes/2023-Tecnicatura-Universitaria-Inteligencia-Artificial.pdf
 total_horas: 1472

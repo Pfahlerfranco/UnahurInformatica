@@ -73,10 +73,10 @@ collections:
                 widget: "image"
 
   - name: "about"
-    label: "Sección Pregrado"
+    label: "Sección Transición"
     files:
       - name: "about"
-        label: "Carga horaria"
+        label: "Nuevos planes de estudio"
         file: "_data/about.yml"
         fields:
           - label: "Subtítulo"
@@ -463,6 +463,49 @@ collections:
         default: 1
         value_type: "int"
 
+  - name: "novedades"
+    label: "Novedades"
+    label_singular: "Novedad"
+    folder: "_novedades"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "title"
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "novedad"
+
+      - label: "Título"
+        name: "title"
+        widget: "string"
+
+      - label: "Fecha"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+
+      - label: "Categoría"
+        name: "categoria"
+        widget: "select"
+        options: ["Planes de estudio", "Inscripciones", "Eventos", "Calendario", "General"]
+        required: false
+
+      - label: "Imagen"
+        name: "imagen"
+        widget: "image"
+        required: false
+
+      - label: "Descripción breve"
+        name: "descripcion"
+        widget: "text"
+        required: false
+
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+
   - name: "posts"
     label: "Materias"
     folder: "_posts"
@@ -489,6 +532,43 @@ collections:
         widget: "string"
         default: "Materias"
 
+      - label: "Carrera/s"
+        name: "carrera"
+        widget: "list"
+        required: false
+        field:
+          label: "Carrera"
+          name: "carrera"
+          widget: "string"
+
+      - label: "Plan"
+        name: "plan"
+        widget: "select"
+        options:
+          - { label: "Vigente 2026", value: "vigente" }
+          - { label: "Plan anterior", value: "anterior" }
+        required: false
+
+      - label: "Carga horaria"
+        name: "carga_horaria"
+        widget: "string"
+        required: false
+
+      - label: "Créditos"
+        name: "creditos"
+        widget: "string"
+        required: false
+
+      - label: "Correlativas"
+        name: "correlativas"
+        widget: "string"
+        required: false
+
+      - label: "PDF Programa completo"
+        name: "pdf_programa"
+        widget: "file"
+        required: false
+
       - label: "Autor"
         name: "by"
         widget: "string"
@@ -499,7 +579,7 @@ collections:
         widget: "string"
         default: "cpu"
 
-      - label: "Programa (archivo PDF)"
+      - label: "Programa (archivo PDF, campo legacy)"
         name: "programa"
         widget: "file"
         required: false
@@ -525,31 +605,65 @@ collections:
     create: true
     delete: true
     slug: "{{slug}}"
-    output: true # <-- esto es clave
+    output: true
     identifier_field: "title"
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string" }
-      - { label: "Horas Totales", name: "total_horas", widget: "number" }
-      - { label: "Créditos", name: "creditos", widget: "number" }
+      - { label: "Ícono", name: "icono", widget: "image", required: false }
+      - { label: "Descripción corta", name: "descripcion_corta", widget: "text", required: false }
+      - { label: "Imagen", name: "imagen", widget: "image", required: false }
+
+      - label: "Estado de la carrera"
+        name: "estado"
+        widget: "select"
+        options:
+          - { label: "Vigente desde 2026 2° Cuatrimestre", value: "vigente" }
+          - { label: "Plan anterior", value: "anterior" }
+          - { label: "Próximamente", value: "proxima" }
+        required: false
+
+      - { label: "Vigente (legacy)", name: "vigente", widget: "boolean", required: false }
+      - { label: "Anterior (legacy)", name: "anterior", widget: "boolean", required: false }
+      - { label: "Próxima (legacy)", name: "proxima", widget: "boolean", required: false }
+      - { label: "Orden", name: "orden", widget: "number", value_type: "int", required: false }
+
+      - { label: "Título intermedio", name: "titulo_intermedio", widget: "string", required: false }
+      - { label: "Horas Totales", name: "total_horas", widget: "number", required: false }
+      - { label: "Créditos", name: "creditos", widget: "number", required: false }
       - { label: "PDF del plan", name: "pdf", widget: "file", required: false }
+      - { label: "Imagen de correlatividades (PNG)", name: "correlatividades_imagen", widget: "image", required: false }
+
+      - label: "Tabla de datos generales (para carreras vigentes con títulos dual)"
+        name: "tabla_datos"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Columna 1 (Grado/Licenciatura)", name: "col_grado", widget: "string" }
+          - { label: "Columna 2 (Intermedio/Técnico)", name: "col_intermedio", widget: "string", required: false }
+          - label: "Filas de datos"
+            name: "filas"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Datos grado", name: "grado", widget: "string" }
+              - { label: "Datos intermedio", name: "intermedio", widget: "string", required: false }
+
       - label: "Cuatrimestres / Años"
         name: "cuatrimestres"
         widget: "list"
+        required: false
         fields:
           - { label: "Nombre", name: "nombre", widget: "string" }
           - { label: "Horas", name: "horas", widget: "string", required: false }
           - label: "Materias"
             name: "materias"
             widget: "list"
+            required: false
             fields:
               - { label: "Nombre", name: "nombre", widget: "string" }
               - { label: "Slug", name: "slug", widget: "string" }
               - { label: "Área", name: "area", widget: "string" }
               - { label: "Hs Semanales", name: "hs_sem", widget: "number" }
               - { label: "Hs Totales", name: "hs_total", widget: "number" }
-              - {
-                  label: "Correlativas",
-                  name: "correlativas",
-                  widget: "string",
-                }
+              - { label: "Correlativas", name: "correlativas", widget: "string" }
