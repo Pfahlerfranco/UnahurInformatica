@@ -44,9 +44,6 @@ plugins:
 # Collections
 # ==========================
 collections:
-  planes:
-    output: false
-
   banners:
     output: false
 

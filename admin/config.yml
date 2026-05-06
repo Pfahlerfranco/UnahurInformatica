@@ -424,45 +424,6 @@ collections:
                 widget: "boolean"
                 default: false
                 required: false
-
-  - name: "planes"
-    label: "Planes"
-    label_singular: "Plan"
-    folder: "_planes"
-    create: true
-    delete: true
-    slug: "{{slug}}"
-    identifier_field: "titulo"
-    fields:
-      - label: "Título"
-        name: "titulo"
-        widget: "string"
-
-      - label: "Descripción"
-        name: "descripcion"
-        widget: "text"
-        required: false
-
-      - label: "Imagen"
-        name: "imagen"
-        widget: "image"
-
-      - label: "Link"
-        name: "link"
-        widget: "string"
-
-      - label: "Abrir en nueva pestaña"
-        name: "externo"
-        widget: "boolean"
-        default: false
-        required: false
-
-      - label: "Orden"
-        name: "orden"
-        widget: "number"
-        default: 1
-        value_type: "int"
-
   - name: "novedades"
     label: "Novedades"
     label_singular: "Novedad"
@@ -489,7 +450,14 @@ collections:
       - label: "Categoría"
         name: "categoria"
         widget: "select"
-        options: ["Planes de estudio", "Inscripciones", "Eventos", "Calendario", "General"]
+        options:
+          [
+            "Planes de estudio",
+            "Inscripciones",
+            "Eventos",
+            "Calendario",
+            "General",
+          ]
         required: false
 
       - label: "Imagen"
@@ -608,10 +576,20 @@ collections:
     output: true
     identifier_field: "title"
     fields:
+    - label: "Layout"
+      name: "layout"
+      widget: "hidden"
+      default: "carrera"
+    fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "Ícono", name: "icono", widget: "image", required: false }
-      - { label: "Descripción corta", name: "descripcion_corta", widget: "text", required: false }
+      - {
+          label: "Descripción corta",
+          name: "descripcion_corta",
+          widget: "text",
+          required: false,
+        }
       - { label: "Imagen", name: "imagen", widget: "image", required: false }
 
       - label: "Estado de la carrera"
@@ -623,31 +601,86 @@ collections:
           - { label: "Próximamente", value: "proxima" }
         required: false
 
-      - { label: "Vigente (legacy)", name: "vigente", widget: "boolean", required: false }
-      - { label: "Anterior (legacy)", name: "anterior", widget: "boolean", required: false }
-      - { label: "Próxima (legacy)", name: "proxima", widget: "boolean", required: false }
-      - { label: "Orden", name: "orden", widget: "number", value_type: "int", required: false }
+      - {
+          label: "Vigente (legacy)",
+          name: "vigente",
+          widget: "boolean",
+          required: false,
+        }
+      - {
+          label: "Anterior (legacy)",
+          name: "anterior",
+          widget: "boolean",
+          required: false,
+        }
+      - {
+          label: "Próxima (legacy)",
+          name: "proxima",
+          widget: "boolean",
+          required: false,
+        }
+      - {
+          label: "Orden",
+          name: "orden",
+          widget: "number",
+          value_type: "int",
+          required: false,
+        }
 
-      - { label: "Título intermedio", name: "titulo_intermedio", widget: "string", required: false }
-      - { label: "Horas Totales", name: "total_horas", widget: "number", required: false }
-      - { label: "Créditos", name: "creditos", widget: "number", required: false }
+      - {
+          label: "Título intermedio",
+          name: "titulo_intermedio",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Horas Totales",
+          name: "total_horas",
+          widget: "number",
+          required: false,
+        }
+      - {
+          label: "Créditos",
+          name: "creditos",
+          widget: "number",
+          required: false,
+        }
       - { label: "PDF del plan", name: "pdf", widget: "file", required: false }
-      - { label: "Imagen de correlatividades (PNG)", name: "correlatividades_imagen", widget: "image", required: false }
+      - {
+          label: "Imagen de correlatividades (PNG)",
+          name: "correlatividades_imagen",
+          widget: "image",
+          required: false,
+        }
 
       - label: "Tabla de datos generales (para carreras vigentes con títulos dual)"
         name: "tabla_datos"
         widget: "object"
         required: false
         fields:
-          - { label: "Columna 1 (Grado/Licenciatura)", name: "col_grado", widget: "string" }
-          - { label: "Columna 2 (Intermedio/Técnico)", name: "col_intermedio", widget: "string", required: false }
+          - {
+              label: "Columna 1 (Grado/Licenciatura)",
+              name: "col_grado",
+              widget: "string",
+            }
+          - {
+              label: "Columna 2 (Intermedio/Técnico)",
+              name: "col_intermedio",
+              widget: "string",
+              required: false,
+            }
           - label: "Filas de datos"
             name: "filas"
             widget: "list"
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Datos grado", name: "grado", widget: "string" }
-              - { label: "Datos intermedio", name: "intermedio", widget: "string", required: false }
+              - {
+                  label: "Datos intermedio",
+                  name: "intermedio",
+                  widget: "string",
+                  required: false,
+                }
 
       - label: "Cuatrimestres / Años"
         name: "cuatrimestres"
@@ -666,4 +699,8 @@ collections:
               - { label: "Área", name: "area", widget: "string" }
               - { label: "Hs Semanales", name: "hs_sem", widget: "number" }
               - { label: "Hs Totales", name: "hs_total", widget: "number" }
-              - { label: "Correlativas", name: "correlativas", widget: "string" }
+              - {
+                  label: "Correlativas",
+                  name: "correlativas",
+                  widget: "string",
+                }
