@@ -576,11 +576,11 @@ collections:
     output: true
     identifier_field: "title"
     fields:
-    - label: "Layout"
-      name: "layout"
-      widget: "hidden"
-      default: "carrera"
-    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "carrera"
+      
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "Ícono", name: "icono", widget: "image", required: false }
