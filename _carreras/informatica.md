@@ -33,7 +33,7 @@ cuatrimestres:
   - nombre: Primer Año
     horas: ""
     materias:
-      - nombre: Matemática
+      - nombre: Matemática I
         slug: matematicaI
         area: CB
         hs_sem: 8
