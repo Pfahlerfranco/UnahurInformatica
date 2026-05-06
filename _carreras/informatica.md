@@ -13,7 +13,7 @@ tabla_datos:
   col_intermedio: Técnico/a Universitario en Programación
   filas:
     - label: Duración
-      grado: 4.5 años
+      grado: 4,5 años
       intermedio: 2,5 años
     - label: Horas Interacción pedagógica
       grado: "3200"
@@ -33,7 +33,7 @@ cuatrimestres:
   - nombre: Primer Año
     horas: ""
     materias:
-      - nombre: Matemática I
+      - nombre: Matemática
         slug: matematicaI
         area: CB
         hs_sem: 8
