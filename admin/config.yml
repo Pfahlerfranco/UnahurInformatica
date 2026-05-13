@@ -84,6 +84,16 @@ collections:
         widget: "string"
         required: false
 
+      - label: "Novedad relacionada (opcional)"
+        name: "novedad_relacionada"
+        widget: "relation"
+        collection: "novedades"
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title"]
+        required: false
+        hint: "Si seleccionás una novedad, el botón llevará a esa página. Dejalo vacío para usar la URL del botón."
+
       - label: "URL del botón"
         name: "boton_url"
         widget: "string"
