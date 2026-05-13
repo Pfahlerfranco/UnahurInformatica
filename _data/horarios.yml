@@ -1,0 +1,20 @@
+titulo: "Horarios de cursada"
+
+cuatrimestre_1:
+  nombre: "1° Cuatrimestre"
+  inicio_clases: "A confirmar"
+  inscripcion: "A confirmar"
+  parciales: "A confirmar"
+  finales: "A confirmar"
+  fin_clases: "A confirmar"
+
+cuatrimestre_2:
+  nombre: "2° Cuatrimestre"
+  inicio_clases: "A confirmar"
+  inscripcion: "A confirmar"
+  parciales: "A confirmar"
+  finales: "A confirmar"
+  fin_clases: "A confirmar"
+
+sheets_embed_url: "INSERTAR_LINK_EMBED_GOOGLE_SHEETS_AQUI"
+sheets_direct_url: "INSERTAR_LINK_DIRECTO_AQUI"
