@@ -89,7 +89,7 @@ cuatrimestres:
         area: CB
         hs_sem: 4
         hs_total: 64
-        correlativas: Matemática para Informática II
+        correlativas: Matemática I
       - nombre: Programación con Objetos II
         slug: programacionObjetosII
         area: AyL
