@@ -37,7 +37,6 @@ permalink: /horarios/
         <table style="width:100%; font-size:0.9rem; border-collapse:collapse;">
           <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Inicio de clases</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_1.inicio_clases }}</td></tr>
           <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Inscripción a materias</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_1.inscripcion }}</td></tr>
-          <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Exámenes parciales</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_1.parciales }}</td></tr>
           <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Exámenes finales</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_1.finales }}</td></tr>
           <tr><td style="padding:8px 0; color:#666;">Fin de clases</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_1.fin_clases }}</td></tr>
         </table>
@@ -48,7 +47,6 @@ permalink: /horarios/
         <table style="width:100%; font-size:0.9rem; border-collapse:collapse;">
           <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Inicio de clases</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_2.inicio_clases }}</td></tr>
           <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Inscripción a materias</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_2.inscripcion }}</td></tr>
-          <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Exámenes parciales</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_2.parciales }}</td></tr>
           <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:8px 0; color:#666;">Exámenes finales</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_2.finales }}</td></tr>
           <tr><td style="padding:8px 0; color:#666;">Fin de clases</td><td style="padding:8px 0; font-weight:600;">{{ h.cuatrimestre_2.fin_clases }}</td></tr>
         </table>
@@ -59,6 +57,7 @@ permalink: /horarios/
       Para el calendario completo, consultá el
       <a href="https://unahur.edu.ar/calendario-academico/" target="_blank" rel="noopener noreferrer" style="color:#4db6ad;">Calendario Académico oficial de UNAHUR</a>.
     </p>
+
   </div>
 
   <!-- Planilla de horarios -->
@@ -66,7 +65,7 @@ permalink: /horarios/
     <h2 style="font-size:1.4rem; color:#4db6ad; border-bottom:2px solid #4db6ad; padding-bottom:8px; margin-bottom:24px;">Planilla de horarios</h2>
     <div style="border-radius:8px; overflow:hidden; border:1px solid #e0e0e0;">
       <iframe
-        src="{{ h.sheets_embed_url }}"
+        src="https://docs.google.com/spreadsheets/d/1knr6Gx00H7LqMnuGcafXhlpzOPJ_0fkBfSjcHwQyaoU/edit?gid=0#gid=0"
         width="100%"
         height="600"
         frameborder="0"
