@@ -1,10 +1,12 @@
 ---
+layout: carrera
 title: Licenciatura en Informática
 permalink: /licenciatura-informatica/
 icono: /assets/img/Informatica-licenciatura-icono.png
 descripcion_corta: Licenciatura con título intermedio Técnico/a Universitario en Programación.
 imagen: assets/images/licenciatura.jpg
 vigente: true
+orden: 1
 titulo_intermedio: Técnico/a Universitario en Programación
 total_horas: 3521
 pdf: /assets/pdf/planes/licenciatura-informatica-unahur.pdf
@@ -27,8 +29,6 @@ tabla_datos:
     - label: Créditos Totales
       grado: "287"
       intermedio: "120"
-layout: carrera
-orden: 1
 cuatrimestres:
   - nombre: Primer Año
     horas: ""
@@ -89,7 +89,7 @@ cuatrimestres:
         area: CB
         hs_sem: 4
         hs_total: 64
-        correlativas: "-"
+        correlativas: Matemática para Informática II
       - nombre: Programación con Objetos II
         slug: programacionObjetosII
         area: AyL
