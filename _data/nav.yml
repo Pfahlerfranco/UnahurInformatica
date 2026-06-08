@@ -1,16 +1,14 @@
 items:
   - label: Inicio
-    url: "#top"
+    url: "/#top"
     active: true
   - label: Carreras
-    url: "#portfolio"
+    url: /carreras/
   - label: Materias
     url: /materias/
   - label: Créditos
-    url: "#free-quote"
+    url: /creditos/
   - label: Novedades
     url: /novedades/
   - label: Horarios
     url: /horarios/
-  - label: Contactos
-    url: "#contactos"

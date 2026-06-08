@@ -22,7 +22,7 @@ como_comunicarse:
       externo: true
     - nombre: "Instagram ITI"
       valor: "@iti.unahur"
-      url: "https://www.instagram.com/iti.unahur/"
+      url: "https://www.instagram.com/tecnologia.ingenieria.unahur/"
       icono: /assets/images/phone-icon.png
       externo: true
     - nombre: "Sitio Web UNAHUR"
@@ -32,9 +32,9 @@ como_comunicarse:
       externo: true
     - nombre: "Personalmente"
       valor: "Oficina ITI - TA213"
-      url: "#"
+      url: "https://maps.app.goo.gl/21wTgUf5kLp2UVMy7"
       icono: /assets/images/location-icon.png
-      externo: false
+      externo: true
 
 discord:
   titulo: "Discord"

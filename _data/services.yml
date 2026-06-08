@@ -4,6 +4,7 @@ carreras:
   - nombre: Licenciatura en Informática
     titulo_intermedio: "Técnico/a Universitario en Programación"
     nueva: true
+    etiqueta: "Nuevo Plan"
     icono: /assets/img/Informatica-licenciatura-icono.png
     descripcion_corta: "La Licenciada o Licenciado en Informática cuenta con una base conceptual sólida que le permite resolver problemas y liderar proyectos de desarrollo de software y aplicaciones de distinta índole y magnitud. Título intermedio: Técnico/a Universitario en Programación."
     habilidades:

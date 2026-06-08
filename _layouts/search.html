@@ -1,68 +1,87 @@
 ---
 layout: default
 ---
-<div class="bg-header">
-  {% include header.html %}
-</div>
 
-<div class="content-post">
-  <div class="size margin">
+<!-- Header búsqueda + filtros -->
+<div style="background: #fff; padding: 28px 0 20px; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
-    <!-- Filtros de materias -->
-    <div style="margin-bottom: 24px; padding: 16px; background:#f8f9fa; border-radius:8px;">
-      <div style="margin-bottom:12px;">
-        <strong style="font-size:0.85rem; color:#555; text-transform:uppercase; letter-spacing:0.5px;">Filtrar por plan:</strong>
-        <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px;">
-          <button onclick="filtrarMaterias('plan', 'todos')" class="filtro-btn active" id="btn-plan-todos"
-            style="padding:6px 16px; border:1px solid #4db6ad; border-radius:20px; background:#4db6ad; color:#fff; cursor:pointer; font-size:0.85rem;">
-            Todos
-          </button>
-          <button onclick="filtrarMaterias('plan', 'vigente')" class="filtro-btn" id="btn-plan-vigente"
-            style="padding:6px 16px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.85rem;">
-            Plan vigente 2026
-          </button>
-          <button onclick="filtrarMaterias('plan', 'anterior')" class="filtro-btn" id="btn-plan-anterior"
-            style="padding:6px 16px; border:1px solid #6c757d; border-radius:20px; background:#fff; color:#6c757d; cursor:pointer; font-size:0.85rem;">
-            Plan anterior
-          </button>
-        </div>
+    <!-- Barra de búsqueda -->
+    <div style="position: relative; max-width: 680px; margin-bottom: 20px;">
+      <div style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #4db6ad; display: flex; align-items: center;">
+        <span class="feather-icon icon-search"></span>
       </div>
-
-      <div>
-        <strong style="font-size:0.85rem; color:#555; text-transform:uppercase; letter-spacing:0.5px;">Filtrar por carrera:</strong>
-        <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px;">
-          <button onclick="filtrarMaterias('carrera', 'todas')" class="filtro-carrera-btn active" id="btn-carrera-todas"
-            style="padding:5px 14px; border:1px solid #888; border-radius:20px; background:#888; color:#fff; cursor:pointer; font-size:0.8rem;">
-            Todas
-          </button>
-          <button onclick="filtrarMaterias('carrera', 'informatica')" class="filtro-carrera-btn" id="btn-carrera-informatica"
-            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
-            Lic. Informática
-          </button>
-          <button onclick="filtrarMaterias('carrera', 'ciberseguridad')" class="filtro-carrera-btn" id="btn-carrera-ciberseguridad"
-            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
-            Lic. Ciberseguridad
-          </button>
-          <button onclick="filtrarMaterias('carrera', 'videojuegos')" class="filtro-carrera-btn" id="btn-carrera-videojuegos"
-            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
-            Lic. Videojuegos
-          </button>
-          <button onclick="filtrarMaterias('carrera', 'ia')" class="filtro-carrera-btn" id="btn-carrera-ia"
-            style="padding:5px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem;">
-            Tec. IA
-          </button>
-          <button onclick="filtrarMaterias('carrera', 'programacion')" class="filtro-carrera-btn" id="btn-carrera-programacion"
-            style="padding:5px 14px; border:1px solid #999; border-radius:20px; background:#fff; color:#999; cursor:pointer; font-size:0.8rem;">
-            Tec. Programación
-          </button>
-          <button onclick="filtrarMaterias('carrera', 'redes')" class="filtro-carrera-btn" id="btn-carrera-redes"
-            style="padding:5px 14px; border:1px solid #999; border-radius:20px; background:#fff; color:#999; cursor:pointer; font-size:0.8rem;">
-            Tec. Redes
-          </button>
-        </div>
+      <input class="input-search" type="text" placeholder="Buscar materia..." id="search-input"
+             style="width:100%; height:50px; border:2px solid #4db6ad; border-radius:10px; padding:0 16px 0 46px; font-size:0.95rem; background:#fff; outline:none; color:#333; transition: border-color 0.2s, box-shadow 0.2s;"
+             onfocus="this.style.boxShadow='0 0 0 3px rgba(77,182,173,0.15)'"
+             onblur="this.style.boxShadow='none'">
+      <div style="position: absolute; width: 100%; background: #fff; z-index: 99; left: 0; border-radius: 0 0 10px 10px; top: 50px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border: 1px solid #e8f5f4; border-top: none;">
+        <ul id="results-container" style="list-style:none; padding:0; margin:0;"></ul>
       </div>
     </div>
-    <!-- /Filtros -->
+
+    <!-- Filtros -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px;">
+
+      <!-- Filtro Plan -->
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <span style="color: #4db6ad; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; font-weight: 700;">Plan:</span>
+        <button onclick="filtrarMaterias('plan', 'todos')" class="filtro-btn" id="btn-plan-todos"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#4db6ad; color:#fff; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Todos
+        </button>
+        <button onclick="filtrarMaterias('plan', 'vigente')" class="filtro-btn" id="btn-plan-vigente"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Plan vigente 2026
+        </button>
+        <button onclick="filtrarMaterias('plan', 'anterior')" class="filtro-btn" id="btn-plan-anterior"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Plan anterior
+        </button>
+      </div>
+
+      <div style="width:1px; height:20px; background: #d0eeec; flex-shrink:0;"></div>
+
+      <!-- Filtro Carrera -->
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <span style="color: #4db6ad; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; font-weight: 700;">Carrera:</span>
+        <button onclick="filtrarMaterias('carrera', 'todas')" class="filtro-carrera-btn" id="btn-carrera-todas"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#4db6ad; color:#fff; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Todas
+        </button>
+        <button onclick="filtrarMaterias('carrera', 'informatica')" class="filtro-carrera-btn" id="btn-carrera-informatica"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Lic. Informática
+        </button>
+        <button onclick="filtrarMaterias('carrera', 'ciberseguridad')" class="filtro-carrera-btn" id="btn-carrera-ciberseguridad"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Lic. Ciberseguridad
+        </button>
+        <button onclick="filtrarMaterias('carrera', 'videojuegos')" class="filtro-carrera-btn" id="btn-carrera-videojuegos"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Lic. Videojuegos
+        </button>
+        <button onclick="filtrarMaterias('carrera', 'ia')" class="filtro-carrera-btn" id="btn-carrera-ia"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Tec. IA
+        </button>
+        <button onclick="filtrarMaterias('carrera', 'programacion')" class="filtro-carrera-btn" id="btn-carrera-programacion"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Tec. Programación
+        </button>
+        <button onclick="filtrarMaterias('carrera', 'redes')" class="filtro-carrera-btn" id="btn-carrera-redes"
+          style="padding:4px 14px; border:1px solid #4db6ad; border-radius:20px; background:#fff; color:#4db6ad; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:0.2s;">
+          Tec. Redes
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Lista de materias -->
+<div class="content-post">
+  <div class="size margin">
 
     <div id="lista-materias">
       {% if site.posts.size == 0 %}
@@ -115,7 +134,6 @@ layout: default
             </h2>
           </div>
 
-          <!-- Tags de carrera y plan -->
           <div style="margin: 4px 0 6px; display:flex; flex-wrap:wrap; gap:6px;">
             {% if post.carrera %}
               {% assign carreras_post = post.carrera %}
@@ -153,47 +171,33 @@ layout: default
 <script>
 var filtroActual = { plan: 'todos', carrera: 'todas' };
 
+var ACTIVO   = { bg: 'rgba(255,255,255,0.25)', color: '#fff',                  border: '1px solid rgba(255,255,255,0.9)' };
+var INACTIVO = { bg: 'transparent',            color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.5)' };
+
+function setEstado(btn, activo) {
+  var s = activo ? ACTIVO : INACTIVO;
+  btn.style.background    = s.bg;
+  btn.style.color         = s.color;
+  btn.style.border        = s.border;
+}
+
 function filtrarMaterias(tipo, valor) {
   filtroActual[tipo] = valor;
 
-  // Actualizar botones activos
   if (tipo === 'plan') {
     document.querySelectorAll('.filtro-btn').forEach(function(btn) {
-      btn.style.background = '#fff';
-      btn.style.color = btn.id.includes('anterior') ? '#6c757d' : '#4db6ad';
+      setEstado(btn, btn.id === 'btn-plan-' + valor);
     });
-    var btnActivo = document.getElementById('btn-plan-' + valor);
-    if (btnActivo) {
-      btnActivo.style.background = btnActivo.id.includes('anterior') ? '#6c757d' : '#4db6ad';
-      btnActivo.style.color = '#fff';
-    }
   } else {
-    var coloresCarrera = {
-      'todas': '#888', 'programacion': '#999', 'redes': '#999'
-    };
     document.querySelectorAll('.filtro-carrera-btn').forEach(function(btn) {
-      var key = btn.id.replace('btn-carrera-', '');
-      var color = coloresCarrera[key] || '#4db6ad';
-      btn.style.background = '#fff';
-      btn.style.color = color;
+      setEstado(btn, btn.id === 'btn-carrera-' + valor);
     });
-    var btnCarrera = document.getElementById('btn-carrera-' + valor);
-    if (btnCarrera) {
-      var colorActivo = coloresCarrera[valor] || '#4db6ad';
-      btnCarrera.style.background = colorActivo;
-      btnCarrera.style.color = '#fff';
-    }
   }
 
-  // Filtrar items
   var items = document.querySelectorAll('.materia-item');
   items.forEach(function(item) {
-    var itemPlan = item.getAttribute('data-plan') || '';
-    var itemCarrera = item.getAttribute('data-carrera') || '';
-
-    var pasaPlan = filtroActual.plan === 'todos' || itemPlan === filtroActual.plan;
-    var pasaCarrera = filtroActual.carrera === 'todas' || itemCarrera.includes(filtroActual.carrera);
-
+    var pasaPlan    = filtroActual.plan    === 'todos'  || item.getAttribute('data-plan')    === filtroActual.plan;
+    var pasaCarrera = filtroActual.carrera === 'todas'  || (item.getAttribute('data-carrera') || '').includes(filtroActual.carrera);
     item.style.display = (pasaPlan && pasaCarrera) ? '' : 'none';
   });
 }
