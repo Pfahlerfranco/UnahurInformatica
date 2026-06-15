@@ -77,13 +77,15 @@ items:
     imagen: /assets/images/blog-post-03.jpg
     url: "#"
     contenido: |
-      <h5>Recursos disponibles</h5>
-      <ul>
-        <li><strong>Campus Virtual UNAHUR:</strong> plataforma Moodle con materiales, foros y entregas de cada materia.</li>
-        <li><strong>Biblioteca digital:</strong> acceso a libros y artículos académicos.</li>
-        <li><strong>Microsoft 365:</strong> los estudiantes de UNAHUR tienen acceso gratuito a Word, Excel, Teams y más.</li>
-        <li><strong>GitHub Student Pack:</strong> solicitá el pack de GitHub con herramientas gratuitas para desarrollo.</li>
-      </ul>
+      <h5>Usuario SIU</h5>
+      <p>Para acceder a los sistemas de UNAHUR necesitás solicitar tu usuario SIU.</p>
+      <a href="https://servicios.unahur.edu.ar/unahur3w/acceso" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-bottom:18px; padding:10px 22px; background:#4db6ad; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.95rem;">🔑 Solicitar usuario SIU</a>
+      <h5>Campus Virtual</h5>
+      <p>Accedé al campus virtual con tu usuario SIU para ver materiales, foros y entregas de cada materia.</p>
+      <a href="https://campus.unahur.edu.ar/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-bottom:18px; padding:10px 22px; background:#4db6ad; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.95rem;">🎓 Ir al Campus Virtual</a>
+      <h5>Email estudiantil</h5>
+      <p>Para solicitar tu email estudiantil escribí a <strong>informatica@unahur.edu.ar</strong>.</p>
+      <a href="mailto:informatica@unahur.edu.ar" style="display:inline-block; padding:10px 22px; background:#4db6ad; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.95rem;">✉️ Solicitar email estudiantil</a>
 
   - categoria: Cursada
     fecha: "2026"
@@ -97,3 +99,4 @@ items:
       <h5>Edificio TA</h5>
       <p>La mayoría de las materias de informática se dictan en el edificio TA. La secretaría del ITI se encuentra en la <strong>oficina TA213</strong>.</p>
       <p>Los horarios y aulas de cada materia se publican al inicio de cada cuatrimestre en el sistema y en el Discord oficial.</p>
+      <a href="https://cpudondecurso.unahur.edu.ar/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; padding:10px 22px; background:#4db6ad; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.95rem;">🏫 Buscar mi aula</a>

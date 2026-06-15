@@ -62,19 +62,25 @@ permalink: /horarios/
 
   <!-- Planilla de horarios -->
   <div>
-    <h2 style="font-size:1.4rem; color:#4db6ad; border-bottom:2px solid #4db6ad; padding-bottom:8px; margin-bottom:24px;">Planilla de horarios</h2>
-    <div style="border-radius:8px; overflow:hidden; border:1px solid #e0e0e0;">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-bottom:2px solid #4db6ad; padding-bottom:8px; margin-bottom:24px;">
+      <h2 style="font-size:1.4rem; color:#4db6ad; margin:0;">Planilla de horarios</h2>
+      <a href="{{ h.sheets_direct_url }}" target="_blank" rel="noopener noreferrer"
+         style="display:inline-flex; align-items:center; gap:6px; padding:7px 16px; background:#4db6ad; color:#fff; border-radius:6px; text-decoration:none; font-size:0.85rem; font-weight:600;">
+        ↗ Abrir en Google Sheets
+      </a>
+    </div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid #e0e0e0; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
       <iframe
-        src="https://docs.google.com/spreadsheets/d/1knr6Gx00H7LqMnuGcafXhlpzOPJ_0fkBfSjcHwQyaoU/edit?gid=0#gid=0"
+        src="{{ h.sheets_embed_url }}"
         width="100%"
-        height="600"
+        height="720"
         frameborder="0"
         style="border:none; display:block;"
         allowfullscreen>
       </iframe>
     </div>
-    <p style="font-size:0.8rem; color:#999; margin-top:8px;">
-      Si no podés ver la planilla, <a href="{{ h.sheets_direct_url }}" target="_blank" rel="noopener noreferrer" style="color:#4db6ad;">abrila en Google Sheets</a>.
+    <p style="font-size:0.8rem; color:#aaa; margin-top:10px; text-align:center;">
+      ¿No se ve bien? <a href="{{ h.sheets_direct_url }}" target="_blank" rel="noopener noreferrer" style="color:#4db6ad;">Abrila en pantalla completa</a>.
     </p>
   </div>
 
