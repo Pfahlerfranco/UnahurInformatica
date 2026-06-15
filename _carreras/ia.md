@@ -7,177 +7,155 @@ orden: 4
 icono: /assets/img/Inteligencia-artificial-icono.png
 descripcion_corta: "Formación en IA, aprendizaje automático y procesamiento de datos."
 imagen: assets/images/licenciatura.jpg
-pdf: /assets/pdf/planes/2023-Tecnicatura-Universitaria-Inteligencia-Artificial.pdf
-total_horas: 1472
-creditos: 35
-
+pdf: /assets/pdf/planes/Tec-Inteligencia-Artificial-2026.pdf
+total_horas: 3000
+tabla_datos:
+  col_grado: "Técnico/a Universitario/a en Inteligencia Artificial"
+  filas:
+    - label: "Duración"
+      grado: "2,5 años"
+    - label: "Horas Interacción pedagógica"
+      grado: "1376"
+    - label: "Materias"
+      grado: "20"
+    - label: "Créditos ACA"
+      grado: "12"
+    - label: "Créditos Totales"
+      grado: "120"
 cuatrimestres:
-  - nombre: "Primer Cuatrimestre"
-    horas: 224
+  - nombre: Primer Cuatrimestre
+    horas: ""
     materias:
-      - nombre: "Matemática para informática I"
-        slug: "matematicaInformaticaI"
-        area: "CB"
+      - nombre: Matemática para informática
+        slug: matematicaParaInformatica
+        area: CFB
         hs_sem: 4
-        hs_total: 64
+        hs_total: 175
         correlativas: "-"
-
-      - nombre: "Introducción a lógica y problemas computacionales"
-        slug: "introduccionLogicaProblemasComputacionales"
-        area: "AyL"
+      - nombre: Introducción a lógica y problemas computacionales
+        slug: introduccionLogicaProblemasComputacionales
+        area: CFB
         hs_sem: 4
-        hs_total: 64
+        hs_total: 175
         correlativas: "-"
-
-      - nombre: "Introducción a la inteligencia artificial"
-        slug: "introduccionInteligenciaArtificial2.1"
-        area: "AyL"
+      - nombre: Introducción a la inteligencia artificial
+        slug: introduccionInteligenciaArtificial
+        area: CFE
         hs_sem: 4
-        hs_total: 64
+        hs_total: 125
         correlativas: "-"
-
-      - nombre: "Nuevos entornos y lenguajes: la producción del conocimiento en la cultura digital"
-        slug: "nuevosEntornos"
-        area: "Gral."
+      - nombre: Cultura y alfabetización digital en la universidad
+        slug: culturaAlfabetizacionDigital
+        area: CFC
         hs_sem: 2
-        hs_total: 32
+        hs_total: 100
         correlativas: "-"
-
-  - nombre: "Segundo Cuatrimestre"
-    horas: 272
+  - nombre: Segundo Cuatrimestre
+    horas: ""
     materias:
-      - nombre: "Álgebra lineal"
-        slug: "algebraLineal"
-        area: "CB"
+      - nombre: Álgebra lineal
+        slug: algebraLineal
+        area: CFB
         hs_sem: 4
-        hs_total: 64
-        correlativas: "Matemática para informática I"
-
-      - nombre: "Cálculo"
-        slug: "calculo"
-        area: "CB"
-        hs_sem: 4
-        hs_total: 64
-        correlativas: "Matemática para informática I"
-
-      - nombre: "Taller de Programación I"
-        slug: "tallerProgramacionI"
-        area: "AyL"
-        hs_sem: 4
-        hs_total: 64
-        correlativas: "Introducción a lógica y problemas computacionales"
-
-      - nombre: "Tecnología y sociedad"
-        slug: "tecnologiaSociedad"
-        area: "APyS"
-        hs_sem: 3
-        hs_total: 48
+        hs_total: 125
         correlativas: "-"
-
-      - nombre: "Inglés I"
-        slug: "inglesI"
-        area: "Gral."
+      - nombre: Cálculo
+        slug: calculo
+        area: CFB
+        hs_sem: 6
+        hs_total: 150
+        correlativas: "-"
+      - nombre: Taller de Programación I
+        slug: tallerProgramacionI
+        area: CFE
+        hs_sem: 4
+        hs_total: 150
+        correlativas: "-"
+      - nombre: Tecnología y sociedad
+        slug: tecnologiaSociedad
+        area: CFB
+        hs_sem: 4
+        hs_total: 100
+        correlativas: "-"
+  - nombre: Tercer Cuatrimestre
+    horas: ""
+    materias:
+      - nombre: Bases de datos
+        slug: basesDatos
+        area: CFB
+        hs_sem: 4
+        hs_total: 175
+        correlativas: "-"
+      - nombre: Probabilidad y estadística
+        slug: probabilidadEstadistica
+        area: CFB
+        hs_sem: 6
+        hs_total: 125
+        correlativas: "-"
+      - nombre: Taller de Programación II
+        slug: tallerProgramacionII
+        area: CFE
+        hs_sem: 4
+        hs_total: 125
+        correlativas: "-"
+      - nombre: Fundamentos de ciencias de datos
+        slug: fundamentosCienciasDatos
+        area: CFE
+        hs_sem: 4
+        hs_total: 125
+        correlativas: "-"
+  - nombre: Cuarto Cuatrimestre
+    horas: ""
+    materias:
+      - nombre: Fundamentos de redes neuronales
+        slug: fundamentosRedesNeuronales
+        area: CFE
+        hs_sem: 4
+        hs_total: 125
+        correlativas: "-"
+      - nombre: Aprendizaje Automático
+        slug: aprendizajeAutomatico
+        area: CFE
+        hs_sem: 4
+        hs_total: 150
+        correlativas: "-"
+      - nombre: Taller de Programación III
+        slug: tallerProgramacionIII
+        area: CFE
+        hs_sem: 4
+        hs_total: 125
+        correlativas: "-"
+      - nombre: Inglés
+        slug: ingles
+        area: CFC
         hs_sem: 2
-        hs_total: 32
+        hs_total: 100
         correlativas: "-"
-
-  - nombre: "Tercer Cuatrimestre"
-    horas: 320
+  - nombre: Quinto Cuatrimestre
+    horas: ""
     materias:
-      - nombre: "Bases de datos"
-        slug: "baseDatos"
-        area: "ISBDySI"
-        hs_sem: 6
-        hs_total: 96
-        correlativas: "Álgebra lineal"
-
-      - nombre: "Probabilidad y estadística"
-        slug: "probabilidadEstadistica"
-        area: "CB"
-        hs_sem: 6
-        hs_total: 96
-        correlativas: "Álgebra lineal,Cálculo"
-
-      - nombre: "Taller de programación II"
-        slug: "tallerProgramacionII"
-        area: "AyL"
-        hs_sem: 4
-        hs_total: 64
-        correlativas: "Taller de Programación I"
-
-      - nombre: "Fundamentos de redes neuronales"
-        slug: "fundamentosRedesNeuronales"
-        area: "IA"
-        hs_sem: 4
-        hs_total: 64
-        correlativas: "Introducción a la inteligencia artificial,Álgebra lineal,Taller de Programación I"
-
-  - nombre: "Cuarto Cuatrimestre"
-    horas: 272
-    materias:
-      - nombre: "Fundamentos de ciencias de datos"
-        slug: "fundamentosCienciaDatos"
-        area: "IA"
-        hs_sem: 3
-        hs_total: 48
-        correlativas: "Introducción a la inteligencia artificial,Álgebra lineal,Cálculo"
-
-      - nombre: "Aprendizaje automático"
-        slug: "aprendizajeAutomatico"
-        area: "IA"
-        hs_sem: 4
-        hs_total: 64
-        correlativas: "Probabilidad y estadística,Fundamentos de redes neuronales"
-
-      - nombre: "Electiva"
-        slug: "electivaInteligenciaArtificial"
-        area: "Elec."
-        hs_sem: 4
-        hs_total: 64
-        correlativas: "Probabilidad y estadística,Fundamentos de redes neuronales"
-
-      - nombre: "Taller de programación III"
-        slug: "tallerProgramacionIII"
-        area: "AyL"
-        hs_sem: 4
-        hs_total: 64
-        correlativas: "Taller de programación II"
-
-      - nombre: "Inglés II"
-        slug: "inglesII"
-        area: "Gral."
+      - nombre: Asignatura UNAHUR
+        slug: asignaturaUNAHUR
+        area: CFC
         hs_sem: 2
-        hs_total: 32
-        correlativas: "Inglés I"
-
-  - nombre: "Quinto Cuatrimestre"
-    horas: 304
-    materias:
-      - nombre: "Materia UNAHUR"
-        slug: "asignaturaUnahurI"
-        area: "Gral."
-        hs_sem: 2
-        hs_total: 32
+        hs_total: 75
         correlativas: "-"
-
-      - nombre: "Aprendizaje automático avanzado"
-        slug: "aprendizajeAutomaticoAvanzado"
-        area: "IA"
+      - nombre: Aprendizaje Automático Avanzado
+        slug: aprendizajeAutomaticoAvanzado
+        area: CFE
         hs_sem: 6
-        hs_total: 96
-        correlativas: "Aprendizaje automático,Taller de programación III"
-
-      - nombre: "Procesamiento de Imágenes y Visión por Computadora"
-        slug: "procesamientoImagenesVisionComputadora"
-        area: "IA"
+        hs_total: 150
+        correlativas: "-"
+      - nombre: Procesamiento de Imágenes y Visión por Computadora
+        slug: procesamientoImagenesVisionComputadora
+        area: CFE
+        hs_sem: 4
+        hs_total: 125
+        correlativas: "-"
+      - nombre: Proyecto integrador
+        slug: proyectoIntegrador
+        area: CIC
         hs_sem: 6
-        hs_total: 96
-        correlativas: "Aprendizaje automático,Taller de programación III"
-
-      - nombre: "Proyecto integrador"
-        slug: "proyectoIntegrador"
-        area: "IA"
-        hs_sem: 5
-        hs_total: 80
-        correlativas: "Aprendizaje automático,Taller de programación III"
+        hs_total: 200
+        correlativas: "-"
 ---
