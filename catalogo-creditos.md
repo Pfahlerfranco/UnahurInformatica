@@ -6,6 +6,13 @@ permalink: /catalogo-creditos/
 
 ---
 
+<div style="margin-bottom: 16px;">
+  <a href="{{ '/creditos/' | relative_url }}"
+     style="display:inline-flex; align-items:center; gap:6px; padding:8px 18px; background:#f0fafa; color:#4db6ad; border:1.5px solid #4db6ad; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.92rem;">
+    ← Volver a Créditos
+  </a>
+</div>
+
 <div style="margin-bottom: 40px; text-align: center;">
   <a href="{{ '/assets/pdf/creditos/202206-catalogo-creditos-tecnicaturas-informatica.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer"
      style="display:inline-block; padding:12px 28px; background:#4db6ad; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; font-size:1rem;">
