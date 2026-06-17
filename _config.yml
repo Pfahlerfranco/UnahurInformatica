@@ -60,6 +60,7 @@ collections:
 # ==========================
 exclude:
   - informaticaunahur.github.io/
+  - vendor/
 
 # ==========================
 # Defaults (IMPORTANTE)
