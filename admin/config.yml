@@ -232,7 +232,7 @@ collections:
                 widget: "image"
 
   - name: "carreras"
-    label: "Sección Carreras"
+    label: "Página Carreras"
     folder: "_carreras"
     create: true
     delete: true
@@ -455,7 +455,7 @@ collections:
                 widget: "string"
 
   - name: "credits_section"
-    label: "Sección Créditos"
+    label: "Página Créditos"
     files:
       - name: "credits"
         label: "Créditos"
